@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <TextureView
+        android:id="@+id/texture_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/bottom_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="beauty_toggle_btn,flip_camera_btn,shot_btn" />
+
+
+    <ImageButton
+        android:id="@+id/flip_camera_btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ic_camera_flip"
+        app:layout_constraintBottom_toBottomOf="@id/shot_btn"
+        app:layout_constraintEnd_toStartOf="@id/shot_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/shot_btn" />
+
+    <ImageButton
+        android:id="@+id/shot_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/selector_shot_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatToggleButton
+        android:id="@+id/beauty_toggle_btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/selector_beauty"
+        android:button="@null"
+        android:checked="true"
+        android:stateListAnimator="@null"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toBottomOf="@id/shot_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/shot_btn"
+        app:layout_constraintTop_toTopOf="@id/shot_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
